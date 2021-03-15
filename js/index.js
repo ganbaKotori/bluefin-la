@@ -26,6 +26,7 @@ searchControl.on("results", function (data) {
 
 $(document).ready(function () {
   $(".alert3").hide();
+  $('[data-toggle="tooltip"]').tooltip();  
 })
 
 L.control

@@ -1,6 +1,7 @@
 var schoolLayerGroup = L.layerGroup();
 function addSchoolMarkers(data) {
   for (var key in data) {
+    console.log(data[key])
     var marker = new L.circleMarker([data[key].geometry.y, data[key].geometry.x], {
         radius: 5,
         color: "#F0F0F0",
@@ -8,7 +9,22 @@ function addSchoolMarkers(data) {
         fill: true,
         fillColor: "blue",
         fillOpacity: 1,
-      })
+      }).bindPopup(
+        "<table class='table table-bordered table-striped table-hover'>" +
+          "<tr><th>Name</th><th>" +
+          data[key].attributes.FULLNAME +
+          "</th><tr>" +
+          "<tr><th>Address</th><th>" +
+          data[key].attributes.ADDRESS +
+          "</th><tr>" +
+          "<tr><th>City</th><th>" +
+          data[key].attributes.CITY +
+          "</th><tr>" +
+          "<tr><th>Description</th><th>" +
+          data[key].attributes.MPD_DESC +
+          "</th><tr>" +
+          "</table>"
+      );
 
       schoolLayerGroup.addLayer(marker);
   }

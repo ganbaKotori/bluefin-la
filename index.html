@@ -53,7 +53,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
 
 <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
-<script src="https://cdn.jsdelivr.net/npm/async-mqtt@2.6.1/index.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 <link
 rel="stylesheet"
@@ -71,10 +70,13 @@ rel="stylesheet"
 <body>
   <div class="container-fluid">
     <div class="row custom-navbar">
-      <div class="center">Bluefin <span class="la">Los Angeles</span></div>
+      <div class="col">
+        <div class="center">Bluefin <span class="la">Los Angeles</span></div>
+      </div>
+      
     </div>
-    <div class="row options-window">
-      <div class="col-12 col-md-3">
+    <div class="row options-window ">
+      <div class="col-12 col-md-3 ">
         <div class="row">
         <div class="col-3 col-md-3">
         <label class="switch">
@@ -83,8 +85,8 @@ rel="stylesheet"
         </label>
       </div>
       <div class="col-3 col-md-3">
-        <span class="lh-lg fw-lighter text-nowrap options">Income</span>
-      </div>
+        <span  class="lh-lg fw-lighter text-nowrap options" >Median Income<i data-toggle="tooltip" title="Median Household Income per Census Tract 2010 in 2018. The dollar amount is adjusted for inflation." class="far fa-question-circle"></i></span>
+      </div>  
     </div>
       </div>
       <div class="col-12 col-md-3">
@@ -96,7 +98,7 @@ rel="stylesheet"
         </label>
       </div>
       <div class="col-3 col-md-3">
-        <span class="lh-lg fw-lighter text-nowrap options">Incidents</span>
+        <span class="lh-lg fw-lighter text-nowrap options">Incidents<i data-toggle="tooltip" title="Incidents of crime in the City of Los Angeles reported by the Los Angeles County Sheriff's Department in the year 2020." class="far fa-question-circle"></i></span>
       </div>
       </div>
       </div>
@@ -109,7 +111,7 @@ rel="stylesheet"
         </label>
       </div>
       <div class="col-3 col-md-3">
-        <span class="lh-lg fw-lighter text-nowrap options">Schools</span>
+        <span  class="lh-lg fw-lighter text-nowrap options">Schools<i data-toggle="tooltip" title="Los Angeles Unified School District school locations" class="far fa-question-circle"></i></span>
       </div>
       </div>
       </div>
@@ -122,14 +124,15 @@ rel="stylesheet"
         </label>
       </div>
       <div class="col-3 col-md-3">
-      <span class="lh-lg fw-lighter text-nowrap options">Demographic</span>
+      <span class="lh-lg fw-lighter text-nowrap options">Demographic<i data-toggle="tooltip" title="2018 estimates of general population by tract" class="far fa-question-circle"></i></span>
     </div>
       </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-12 col-md-9" id="map"></div>
+      <div class="col-12 col-md-9 notImportant" id="map"></div>
       <div class="col-12 col-md-3 sidebar" >
+       
         <canvas id="myChart2" width="200" height="200"></canvas></div>
     </div>
     <div class="row footer">
